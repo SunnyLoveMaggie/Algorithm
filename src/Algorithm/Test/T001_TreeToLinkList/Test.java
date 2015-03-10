@@ -1,6 +1,5 @@
 package Algorithm.Test.T001_TreeToLinkList;
 
-import Algorithm.Test.T001_TreeToLinkList.Solution1.TreeToLinkListImpl1;
 import Algorithm.Test.T001_TreeToLinkList.Solution1.TreeToLinkListImpl2;
 
 /**
