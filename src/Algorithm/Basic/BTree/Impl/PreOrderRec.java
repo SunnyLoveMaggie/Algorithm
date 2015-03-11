@@ -6,8 +6,8 @@
 * @date Mar 10, 2015 4:53:26 PM 
 * @version V1.0   
 */
-package Algorithm.BTree.Impl;
-import Algorithm.BTree.*;
+package Algorithm.Basic.BTree.Impl;
+import Algorithm.Basic.BTree.*;
 /** 
  * @ClassName: PreOrderRec 
  * @Description: TODO
@@ -15,7 +15,7 @@ import Algorithm.BTree.*;
  * @date Mar 10, 2015 4:53:26 PM 
  *  
  */
-public class PostOrderRec <T extends Comparable<T>> implements BTreeTravelable<T>{
+public class PreOrderRec <T extends Comparable<T>> implements BTreeTravelable<T>{
 
 	/* (non-Javadoc)
 	 * <p>Title: travel</p> 
@@ -26,9 +26,9 @@ public class PostOrderRec <T extends Comparable<T>> implements BTreeTravelable<T
 	@Override
 	public void travel(Node<T> root) {
 		if(root != null){
+			System.out.print(root.getData() + "\t");
 			travel(root.getlNode());
 			travel(root.getrNode());
-			System.out.print(root.getData() + "\t");
 		}
 	}
 	

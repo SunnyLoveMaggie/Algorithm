@@ -6,10 +6,11 @@
 * @date Mar 10, 2015 4:53:26 PM 
 * @version V1.0   
 */
-package Algorithm.BTree.Impl;
+package Algorithm.Basic.BTree.Impl;
 import java.util.LinkedList;
 
-import Algorithm.BTree.*;
+import Algorithm.Basic.BTree.BTreeTravelable;
+import Algorithm.Basic.BTree.Node;
 /** 
  * @ClassName: PreOrderRec 
  * @Description: TODO
@@ -17,11 +18,11 @@ import Algorithm.BTree.*;
  * @date Mar 10, 2015 4:53:26 PM 
  *  
  */
-public class PostOrder <T extends Comparable<T>> implements BTreeTravelable<T>{
+public class InOrder <T extends Comparable<T>> implements BTreeTravelable<T>{
 
 	/* (non-Javadoc)
 	 * <p>Title: travel</p> 
-	 * <p>Description: </p> 当上一个访问的结点是右孩子或者当前结点没有右孩子则访问当前结点
+	 * <p>Description: </p> 
 	 * @param root 
 	 * @see Algorithm.BTree.BTreeTravelable#travel(Algorithm.BTree.Node) 
 	 */
@@ -29,23 +30,16 @@ public class PostOrder <T extends Comparable<T>> implements BTreeTravelable<T>{
 	public void travel(Node<T> root) {
 		LinkedList<Node <T>> stack = new LinkedList<Node <T>>();
 		Node<T> node = root;
-		Node<T> rNode = null;  
 		while(!stack.isEmpty() || node !=null){
 			while(node!=null){
 				stack.push(node);
 				node = node.getlNode();
 			}
-			node = stack.pop();
-			while(node != null && (node.getrNode() == null || node.getrNode() == rNode)){
-				System.out.print(node.getData() + "\t");
-				rNode = node;
-				if(stack.isEmpty()){
-					return;
-				}
+			if(!stack.isEmpty()){
 				node = stack.pop();
+				System.out.print(node.getData() + "\t");
+				node = node.getrNode();
 			}
-			stack.push(node);
-			node = node.getrNode();
 		}
 	}
 	

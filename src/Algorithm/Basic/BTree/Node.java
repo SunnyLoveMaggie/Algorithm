@@ -6,7 +6,7 @@
 * @date Mar 10, 2015 4:44:47 PM 
 * @version V1.0   
 */
-package Algorithm.BTree;
+package Algorithm.Basic.BTree;
 
 /** 
  * @ClassName: Node 

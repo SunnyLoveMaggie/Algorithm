@@ -6,14 +6,14 @@
 * @date Mar 10, 2015 5:15:13 PM 
 * @version V1.0   
 */
-package Algorithm.BTree;
+package Algorithm.Basic.BTree;
 
-import Algorithm.BTree.Impl.InOrder;
-import Algorithm.BTree.Impl.InOrderRec;
-import Algorithm.BTree.Impl.PostOrder;
-import Algorithm.BTree.Impl.PostOrderRec;
-import Algorithm.BTree.Impl.PreOrder;
-import Algorithm.BTree.Impl.PreOrderRec;
+import Algorithm.Basic.BTree.Impl.InOrder;
+import Algorithm.Basic.BTree.Impl.InOrderRec;
+import Algorithm.Basic.BTree.Impl.PostOrder;
+import Algorithm.Basic.BTree.Impl.PostOrderRec;
+import Algorithm.Basic.BTree.Impl.PreOrder;
+import Algorithm.Basic.BTree.Impl.PreOrderRec;
 
 
 /** 

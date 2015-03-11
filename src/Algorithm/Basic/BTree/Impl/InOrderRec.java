@@ -6,11 +6,8 @@
 * @date Mar 10, 2015 4:53:26 PM 
 * @version V1.0   
 */
-package Algorithm.BTree.Impl;
-import java.util.LinkedList;
-
-import Algorithm.BTree.BTreeTravelable;
-import Algorithm.BTree.Node;
+package Algorithm.Basic.BTree.Impl;
+import Algorithm.Basic.BTree.*;
 /** 
  * @ClassName: PreOrderRec 
  * @Description: TODO
@@ -18,7 +15,7 @@ import Algorithm.BTree.Node;
  * @date Mar 10, 2015 4:53:26 PM 
  *  
  */
-public class PreOrder <T extends Comparable<T>> implements BTreeTravelable<T>{
+public class InOrderRec <T extends Comparable<T>> implements BTreeTravelable<T>{
 
 	/* (non-Javadoc)
 	 * <p>Title: travel</p> 
@@ -28,15 +25,10 @@ public class PreOrder <T extends Comparable<T>> implements BTreeTravelable<T>{
 	 */
 	@Override
 	public void travel(Node<T> root) {
-		LinkedList<Node <T>> stack = new LinkedList<Node <T>>();
-		stack.push(root);
-		while(!stack.isEmpty()){
-			Node<T> node = stack.poll();
-			if(node != null) {
-				System.out.print(node.getData() + "\t");
-				stack.push(node.getrNode());
-				stack.push(node.getlNode());
-			}
+		if(root != null){
+			travel(root.getlNode());
+			System.out.print(root.getData() + "\t");
+			travel(root.getrNode());
 		}
 	}
 	
