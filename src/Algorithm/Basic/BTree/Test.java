@@ -11,6 +11,8 @@ package Algorithm.Basic.BTree;
 import Algorithm.Basic.BTree.Impl.InOrder;
 import Algorithm.Basic.BTree.Impl.InOrderRec;
 import Algorithm.Basic.BTree.Impl.PostOrder;
+import Algorithm.Basic.BTree.Impl.PostOrder2;
+import Algorithm.Basic.BTree.Impl.PostOrder3;
 import Algorithm.Basic.BTree.Impl.PostOrderRec;
 import Algorithm.Basic.BTree.Impl.PreOrder;
 import Algorithm.Basic.BTree.Impl.PreOrderRec;
@@ -18,7 +20,7 @@ import Algorithm.Basic.BTree.Impl.PreOrderRec;
 
 /** 
  * @ClassName: Test 
- * @Description: TODO
+ * @Description: 参考： http://blog.csdn.net/clam_clam/article/details/6845399
  * @author xiangmin@cn.ibm.com 
  * @date Mar 10, 2015 5:15:13 PM 
  *  
@@ -54,6 +56,14 @@ public class Test {
 		System.out.println();
 		System.out.println("后序遍历（非递归）:");
 		tree.setTravelMethod(new PostOrder<Integer>());
+		tree.travelTree();
+		System.out.println();
+		System.out.println("后序遍历（非递归）2:");
+		tree.setTravelMethod(new PostOrder2<Integer>());
+		tree.travelTree();
+		System.out.println();
+		System.out.println("后序遍历（非递归）3:");
+		tree.setTravelMethod(new PostOrder3<Integer>());
 		tree.travelTree();
 	}
 }
